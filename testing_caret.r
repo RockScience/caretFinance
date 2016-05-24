@@ -3,7 +3,7 @@ library(mlbench)
 data(Sonar)
 nrow(Sonar)
 head(Sonar)
-set.seed(107)
+set.seed(107) 
 inTrain = caret::createDataPartition(y = Sonar$Class, p = 0.75, list=FALSE)
 #inTrain = createTimeSlices(y = Sonar$Class, p = 0.75, list=FALSE)
 
