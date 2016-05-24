@@ -1,3 +1,6 @@
+# https://cran.r-project.org/web/packages/caret/index.html
+# https://www.r-project.org/nosvn/conferences/useR-2013/Tutorials/kuhn/user_caret_2up.pdf
+
 #library(caret)
 library(mlbench)
 data(Sonar)
@@ -19,7 +22,8 @@ plsFit = caret::train(Class ~ .,
                       method = "pls",  # partial least squares discriminant analysis (PLSDA)
                       tuneLength = 15, # here, this controls the number of parameter set (for pls, it will try 1:15)
                       preProc = c("center","scale"))
-
+caret::plot.train(plsFit)
+caret::ggplot.train(plsFit)
 
 # resampling method is specified with trControl
 
