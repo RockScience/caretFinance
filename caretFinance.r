@@ -2,8 +2,6 @@
 
 
 ######## 1) prepare the data.frame of features (we should have a function for that?) ##########
-
-
 ROCs = function(x = getBB("CL"), endROC = 100, numROC = 25, hlROC = floor(numROC/4), plotROC = FALSE) {
   
   nROCs = unique(floor(seqExp(start=1, end = endROC, n = numROC, hl=hlROC, plot=plotROC)))
@@ -18,6 +16,10 @@ ROCs = function(x = getBB("CL"), endROC = 100, numROC = 25, hlROC = floor(numROC
   return(x_xts)
 }
 
+
+#CL = getBB("CL")
+#save(CL, file = "~/caretFinance/price.RData")
+load(file = "~/caretFinance/price.RData")
 
 df = as.data.frame(ROCs(x = getBB("CL"), endROC = 100, numROC = 25, plotROC = TRUE))
 tail(df)
