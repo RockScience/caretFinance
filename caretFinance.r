@@ -21,6 +21,6 @@ ROCs = function(x = getBB("CL"), endROC = 100, numROC = 25, hlROC = floor(numROC
 #save(CL, file = "~/caretFinance/price.RData")
 load(file = "~/caretFinance/price.RData")
 
-df = as.data.frame(ROCs(x = getBB("CL"), endROC = 100, numROC = 25, plotROC = TRUE))
-tail(df)
+x = as.data.frame(ROCs(x = CL, endROC = 100, numROC = 25, plotROC = TRUE))
+tail(x)
 
